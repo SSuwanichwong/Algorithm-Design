@@ -31,8 +31,6 @@ int main() {
         cout << max(dpR[n], dpL[n]) << "\n";
     } else {
         vector<vector<ll>> dpL(n+1, vector<ll>(k+1)), dpR(n+1, vector<ll>(k+1));
-
-        ll final_ans = 0;
         
         dpL[0][0] = 0; dpR[0][0] = 0;
         for (int i=0; i<n+1; i++){
