@@ -51,7 +51,7 @@ int main() {
     int curr = n % 2;
     for (int i=0; i<x; i++){
         ans = max(ans, dp[curr][i]);
-        cout << "i: " << i << " value: " << dp[curr][i] << "\n";
+        //cout << "i: " << i << " value: " << dp[curr][i] << "\n";
     }
     cout << ans << "\n";
 }
