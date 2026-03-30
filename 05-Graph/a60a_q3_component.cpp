@@ -7,12 +7,16 @@ void dfs_stack(int u, vector<int> &visited, vector<vector<int>> &adj, int v, int
 int main() {
     int v, e;
     cin >> v >> e;
-    vector<vector<int>> adj(v+1, vector<int>(v+1,0));
+    vector<vector<int>> adj(v+1);
+
     for (int i=0; i<e; i++){
         int a, b;
         cin >> a >> b;
-        adj[a][b] = 1; adj[b][a] = 1;
+        // undirected so it goes both ways
+        adj[a].push_back(b);
+        adj[b].push_back(a);
     }
+
     vector<int> visited(v+1, -1);
     int count = 1;
     for (int i=1; i<v+1; i++){
@@ -35,10 +39,10 @@ void dfs_stack(int u, vector<int> &visited, vector<vector<int>> &adj, int v, int
     while (!s.empty()){
         int curr = s.top();
         s.pop();
-        for (int i=1; i<v+1; i++){
-            if (adj[curr][i] == 1 && visited[i] == -1){
-                visited[i] = count;
-                s.push(i);
+        for (auto &con : adj[curr]){
+            if (visited[con] == -1){
+                visited[con] = count;
+                s.push(con);
             }
         }
     }
