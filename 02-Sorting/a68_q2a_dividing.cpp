@@ -22,7 +22,7 @@ int main() {
         rigil_sum += x;
         spica.pop_back();
     }
-    if (spica.size() == 0) return -1;
+    
     cout << spica.size() << "\n";
     for (auto &s : spica) cout << s.second << " ";
     cout << endl;
