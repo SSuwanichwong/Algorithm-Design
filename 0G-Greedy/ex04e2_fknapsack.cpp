@@ -40,5 +40,6 @@ int main() {
         //cout << "total: " << total << " i : " << i << "\n";
     }
     
-    cout << total << "\n";
+    cout << fixed << setprecision(4) << total << "\n";
+    //cout << total << "\n";
 }
