@@ -26,7 +26,7 @@ int main() {
         for (int i=0; i<M; i++){
             int curr = seq[i];
             int next = seq[(i+1) % M];
-            int tot = dist_cal(curr, next, t, pt, M);
+            ll tot = dist_cal(curr, next, t, pt, M);
             tot = min((ll)tot, dist_cal(curr, a, t, pt, M) + dist_cal(b, next, t, pt, M));
             tot = min((ll)tot, dist_cal(curr, b, t, pt, M) + dist_cal(a, next, t, pt, M));
             total += tot;
